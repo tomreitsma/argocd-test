@@ -5,7 +5,7 @@ metadata:
   namespace: tomturbotest
 spec:
   rules:
-    - host: kubernetes.docker.internal
+    - host: test.kubernetes.docker.internal
       http:
         paths:
           - backend:
@@ -13,5 +13,5 @@ spec:
                 name: helloworld-clusterip
                 port:
                   number: 8080
-            path: /supertest
+            path: /
             pathType: Prefix
