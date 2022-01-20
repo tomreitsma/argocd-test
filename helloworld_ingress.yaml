@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: hello-world-ingress
+  namespace: tomturbotest
+spec:
+  rules:
+    - host: tomturbotest.local
+      http:
+        paths:
+          - backend:
+              service:
+                name: helloworld-clusterip
+                port:
+                  number: 8080
+            path: /
+            pathType: prefix
